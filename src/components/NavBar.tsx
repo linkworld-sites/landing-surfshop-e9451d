@@ -7,7 +7,7 @@ import { track } from "@/lib/funnel";
 
 const links = [
   { label: "Shop", href: "/shop" },
-  { label: "Rent an eFoil", href: "#efoil" },
+  { label: "eFoil Sessions", href: "/efoil" },
   { label: "About", href: "#about" },
   { label: "Blog", href: "/blog" },
 ];

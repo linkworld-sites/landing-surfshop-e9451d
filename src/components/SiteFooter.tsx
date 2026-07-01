@@ -8,10 +8,11 @@ const shopLinks = [
 ];
 
 const rentalLinks = [
-  { label: "eFoil Rentals", href: "#efoil" },
-  { label: "Book a Session", href: "#booking" },
-  { label: "How It Works", href: "#about" },
-  { label: "FAQs", href: "#about" },
+  { label: "eFoil Rentals", href: "/efoil" },
+  { label: "Book a Session", href: "/efoil#booking" },
+  { label: "How It Works", href: "/efoil#how-it-works" },
+  { label: "FAQs", href: "/efoil#faq" },
+  { label: "Pricing", href: "/efoil#pricing" },
 ];
 
 const infoLinks = [
@@ -67,12 +68,12 @@ export default function SiteFooter() {
             <ul className="space-y-2.5">
               {rentalLinks.map((l) => (
                 <li key={l.label}>
-                  <a
+                  <Link
                     href={l.href}
                     className="font-body text-sand/50 text-sm hover:text-cyan transition-colors"
                   >
                     {l.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
