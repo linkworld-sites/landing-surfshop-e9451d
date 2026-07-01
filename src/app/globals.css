@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #F5F0E8;
+  color: #0A1628;
+  overflow-x: hidden;
+}
+
+/* Outlined text utility */
+.text-outline-cyan {
+  -webkit-text-stroke: 2px #00C2FF;
+  color: transparent;
+}
+
+.text-outline-sand {
+  -webkit-text-stroke: 2px #F5F0E8;
+  color: transparent;
+}
+
+/* Ticker animation */
+.animate-ticker {
+  animation: ticker 28s linear infinite;
+}
+
+.animate-ticker:hover {
+  animation-play-state: paused;
+}
+
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Coral CTA strip on product cards */
+.card-cta-strip {
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .card-cta-strip {
+  transform: translateY(0);
+}
+
+/* Blog / legal post body */
+.post-body h1 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 2em;
+  font-weight: 700;
+  margin: 1.8em 0 0.6em;
+  color: #0A1628;
+}
+
+.post-body h2 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.5em;
+  font-weight: 600;
+  margin: 1.6em 0 0.6em;
+  color: #0A1628;
+}
+
+.post-body h3 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.25em;
+  font-weight: 600;
+  margin: 1.4em 0 0.5em;
+  color: #0A1628;
+}
+
+.post-body p {
+  margin: 1em 0;
+  line-height: 1.8;
+  color: #0A1628;
+}
+
+.post-body ul,
+.post-body ol {
+  margin: 1em 0;
+  padding-left: 1.5em;
+}
+
+.post-body ul {
+  list-style: disc;
+}
+
+.post-body ol {
+  list-style: decimal;
+}
+
+.post-body li {
+  margin-bottom: 0.4em;
+  line-height: 1.75;
+}
+
+.post-body a {
+  text-decoration: underline;
+  color: #00C2FF;
+}
+
+.post-body blockquote {
+  border-left: 3px solid #00C2FF;
+  padding-left: 1em;
+  margin: 1.5em 0;
+  font-style: italic;
+  opacity: 0.85;
+}
+
+.post-body img {
+  border-radius: 0.5em;
+  margin: 1.5em 0;
+  width: 100%;
+}
+
+.post-body strong {
+  font-weight: 600;
+}
+
+/* Glassmorphism */
+.glass-card {
+  background: rgba(0, 194, 255, 0.12);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 194, 255, 0.2);
+}
