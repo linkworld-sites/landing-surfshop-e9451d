@@ -13,6 +13,7 @@ export const metadata = {
   title: "Surfshop — Ride Above It All | eFoil Rentals & Surf Gear",
   description:
     "Electric hydrofoil rentals, surf boards, fins, and everything you need in the water. Beginner-friendly eFoil sessions with instructors included. No waves required.",
+  alternates: { canonical: "https://75c239a4.run.linkworld.ai" },
 };
 
 export default async function HomePage() {

@@ -1,21 +1,24 @@
+import type { Metadata } from "next";
 import { fetchProducts } from "@/lib/checkout";
-import { CartProvider } from "@/components/CartContext";
 import ShopClient from "@/components/ShopClient";
 import ShopTracker from "@/components/ShopTracker";
 import NavBar from "@/components/NavBar";
 import SiteFooter from "@/components/SiteFooter";
 
-export const metadata = {
+const BASE = "https://75c239a4.run.linkworld.ai";
+
+export const metadata: Metadata = {
   title: "Shop — Surfshop | Boards, Fins & Water Sports Gear",
   description:
     "Curated surf boards, fins, wax, apparel and accessories. Chosen by riders, for riders. Free returns on all orders.",
+  alternates: { canonical: `${BASE}/shop` },
 };
 
 export default async function ShopPage() {
   const products = await fetchProducts();
 
   return (
-    <CartProvider>
+    <>
       <ShopTracker />
       <NavBar />
       <main className="min-h-screen bg-sand">
@@ -43,6 +46,6 @@ export default async function ShopPage() {
         </div>
       </main>
       <SiteFooter />
-    </CartProvider>
+    </>
   );
 }

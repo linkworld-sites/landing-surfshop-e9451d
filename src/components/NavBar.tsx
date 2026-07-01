@@ -4,9 +4,10 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { track } from "@/lib/funnel";
+import { useCart } from "@/components/CartContext";
 
 const links = [
-  { label: "Shop", href: "/shop" },
+  { label: "Products", href: "/products" },
   { label: "eFoil Sessions", href: "/efoil" },
   { label: "About", href: "#about" },
   { label: "Blog", href: "/blog" },
@@ -15,6 +16,7 @@ const links = [
 export default function NavBar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const { count } = useCart();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -56,6 +58,35 @@ export default function NavBar() {
               </Link>
             </motion.div>
           ))}
+          {/* Cart */}
+          <Link href="/cart" aria-label={`Cart (${count} items)`}>
+            <motion.span
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.92 }}
+              className="relative flex items-center text-sand/70 hover:text-cyan transition-colors"
+            >
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                aria-hidden="true"
+              >
+                <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <path d="M16 10a4 4 0 01-8 0" />
+              </svg>
+              {count > 0 && (
+                <span className="absolute -top-1.5 -right-1.5 bg-coral text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center leading-none">
+                  {count}
+                </span>
+              )}
+            </motion.span>
+          </Link>
+
           <motion.a
             href="#booking"
             whileHover={{ scale: 1.06, backgroundColor: "#e55a20" }}
@@ -112,6 +143,18 @@ export default function NavBar() {
               {l.label}
             </Link>
           ))}
+          <Link
+            href="/cart"
+            onClick={() => setMenuOpen(false)}
+            className="flex items-center justify-between text-sand/80 hover:text-cyan font-body font-medium py-1 transition-colors"
+          >
+            <span>Cart</span>
+            {count > 0 && (
+              <span className="bg-coral text-white text-xs font-bold px-2 py-0.5 rounded-full">
+                {count}
+              </span>
+            )}
+          </Link>
           <a
             href="#booking"
             onClick={() => {

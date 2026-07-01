@@ -7,6 +7,7 @@ export const metadata = {
   title: "Journal — Surfshop | Stories from the Water",
   description:
     "Surf stories, eFoil guides, gear reviews, and dispatches from the beach. Written by riders, for riders.",
+  alternates: { canonical: "https://75c239a4.run.linkworld.ai/blog" },
 };
 
 export default function BlogIndex() {

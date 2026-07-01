@@ -9,6 +9,7 @@ export const metadata: Metadata = {
     "Book eFoil rentals and electric surfboard lessons near you from $89. 60-min sessions, certified instructor included, all skill levels welcome. No experience needed. Experience the future of surfing in 2026.",
   keywords:
     "eFoil rentals near me, electric surfboard lessons near me, eFoil experience 2026, electric hydrofoil rental, eFoil lessons beginner, learn to eFoil, eFoil rental price, electric foil board",
+  alternates: { canonical: "https://75c239a4.run.linkworld.ai/efoil" },
   openGraph: {
     title: "eFoil Rentals & Electric Surfboard Lessons Near You | Surfshop",
     description:
